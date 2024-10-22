@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Services: React.FC = () => {
   return (
@@ -51,9 +52,9 @@ const Services: React.FC = () => {
           <p className="services__contact-text">
             Notre équipe est à votre disposition pour étudier votre projet
           </p>
-          <a href="/contact" className="services__contact-btn">
+          <Link to="/contact" className="services__contact-btn">
             Prendre rendez-vous
-          </a>
+          </Link>
         </div>
       </section>
     </div>

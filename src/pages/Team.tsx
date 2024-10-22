@@ -12,7 +12,19 @@ const Team: React.FC = () => {
 
       <section className="team__grid container">
         <article className="team__member">
-          <div className="team__member-image">♦</div>
+          <span className="team__member-image">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </span>
           <h3 className="team__member-name">Me Jean Dupont</h3>
           <p className="team__member-role">Notaire Associé</p>
           <p className="team__member-description">
@@ -22,7 +34,19 @@ const Team: React.FC = () => {
         </article>
 
         <article className="team__member">
-          <div className="team__member-image">♦</div>
+          <span className="team__member-image">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </span>
           <h3 className="team__member-name">Me Marie Martin</h3>
           <p className="team__member-role">Notaire Associée</p>
           <p className="team__member-description">
@@ -31,31 +55,25 @@ const Team: React.FC = () => {
         </article>
 
         <article className="team__member">
-          <div className="team__member-image">♦</div>
+          <span className="team__member-image">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+              <circle cx="12" cy="7" r="4"></circle>
+            </svg>
+          </span>
           <h3 className="team__member-name">Me Sophie Bernard</h3>
           <p className="team__member-role">Notaire Assistant</p>
           <p className="team__member-description">
             Spécialisée en droit patrimonial et gestion de fortune
           </p>
         </article>
-      </section>
-
-      <section className="team__values container">
-        <h2 className="team__values-title">Nos Valeurs</h2>
-        <div className="team__values-grid">
-          <div className="team__value">
-            <h3>Excellence</h3>
-            <p>Un travail rigoureux et une expertise pointue</p>
-          </div>
-          <div className="team__value">
-            <h3>Confidentialité</h3>
-            <p>La discrétion absolue dans le traitement de vos dossiers</p>
-          </div>
-          <div className="team__value">
-            <h3>Disponibilité</h3>
-            <p>Une équipe à l'écoute et réactive à vos besoins</p>
-          </div>
-        </div>
       </section>
     </div>
   );

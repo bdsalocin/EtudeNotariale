@@ -1,7 +1,10 @@
+@import "../base/variables";
+@import "../base/mixins";
+
 .contact {
   &__hero {
     background-color: $subtle-gold;
-    padding: $spacing-xlarge 0;
+    padding: $spacing-xlarge $spacing-unit;
     text-align: center;
     margin-bottom: $spacing-xlarge;
   }
@@ -9,10 +12,19 @@
   &__title {
     font-size: $font-size-large;
     margin-bottom: $spacing-unit;
+    color: $primary-color;
 
     &::after {
-      margin: $spacing-unit auto;
+      content: "";
+      display: block;
+      height: 1px;
+      background: $accent-color;
       width: 100px;
+      margin: $spacing-unit auto;
+    }
+
+    @include mobile {
+      font-size: 2rem;
     }
   }
 
@@ -21,6 +33,10 @@
     color: $text-color;
     max-width: 600px;
     margin: 0 auto;
+
+    @include mobile {
+      font-size: 1.2rem;
+    }
   }
 
   &__grid {
@@ -28,24 +44,28 @@
     grid-template-columns: 1fr 2fr;
     gap: $spacing-xlarge;
     margin-bottom: $spacing-xlarge;
-  }
 
-  &__section-title {
-    font-size: $font-size-medium;
-    margin-bottom: $spacing-large;
-
-    &::after {
-      width: 30px;
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: $spacing-large;
+      padding: 0 $spacing-unit;
     }
   }
 
   &__info {
     background-color: $subtle-gold;
     padding: $spacing-large;
+    border-radius: 4px;
+    height: fit-content;
+
+    @include mobile {
+      order: 2;
+    }
   }
 
   &__info-item {
     margin-bottom: $spacing-large;
+    text-align: center;
 
     &:last-child {
       margin-bottom: 0;
@@ -66,12 +86,42 @@
       margin-bottom: calc($spacing-unit / 2);
       font-size: $font-size-base;
       line-height: 1.6;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
   &__form {
     padding: $spacing-large;
     border: 1px solid rgba($accent-color, 0.2);
+    border-radius: 4px;
+    background-color: $secondary-color;
+
+    @include mobile {
+      order: 1;
+    }
+  }
+
+  &__section-title {
+    font-size: $font-size-medium;
+    margin-bottom: $spacing-large;
+    text-align: center;
+    color: $primary-color;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background: $accent-color;
+      width: 100px;
+      margin: $spacing-unit auto;
+    }
+
+    @include mobile {
+      font-size: 1.5rem;
+    }
   }
 
   &__form-group {
@@ -88,37 +138,61 @@
     select,
     textarea {
       width: 100%;
-      padding: calc($spacing-unit / 2);
+      padding: calc($spacing-unit / 1.5);
       border: 1px solid rgba($primary-color, 0.2);
+      border-radius: 4px;
       background-color: $secondary-color;
       font-family: $font-primary;
       font-size: $font-size-base;
+      color: $primary-color;
       transition: $transition-default;
 
       &:focus {
         outline: none;
         border-color: $accent-color;
+        box-shadow: 0 0 0 2px rgba($accent-color, 0.1);
+      }
+
+      &::placeholder {
+        color: rgba($text-color, 0.5);
       }
     }
 
     textarea {
       resize: vertical;
+      min-height: 120px;
+    }
+
+    select {
+      appearance: none;
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+      background-repeat: no-repeat;
+      background-position: right 1rem center;
+      background-size: 1em;
+      padding-right: 2.5rem;
     }
   }
 
   &__form-submit {
+    width: 100%;
+    padding: $spacing-unit;
     background-color: $primary-color;
     color: $secondary-color;
     border: none;
-    padding: $spacing-unit $spacing-large;
+    border-radius: 4px;
     font-family: $font-primary;
     font-size: $font-size-base;
     cursor: pointer;
     transition: $transition-default;
-    width: 100%;
+    letter-spacing: 1px;
 
     &:hover {
       background-color: $accent-color;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px rgba($accent-color, 0.2);
     }
   }
 
@@ -131,6 +205,7 @@
       margin-bottom: $spacing-xlarge;
 
       &::after {
+        width: 100px;
         margin: $spacing-unit auto;
       }
     }
@@ -138,22 +213,20 @@
 
   &__map-container {
     height: 400px;
-    background-color: rgba($primary-color, 0.1);
-  }
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid rgba($accent-color, 0.2);
+    background-color: $secondary-color;
 
-  &__map-placeholder {
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: $text-color;
-    font-style: italic;
-  }
-
-  // Responsive
-  @media (max-width: 768px) {
-    &__grid {
-      grid-template-columns: 1fr;
+    @include mobile {
+      height: 300px;
+      margin: 0 $spacing-unit;
     }
+  }
+
+  &__map-iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
   }
 }

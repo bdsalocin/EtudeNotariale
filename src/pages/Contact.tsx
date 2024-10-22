@@ -83,7 +83,15 @@ const Contact: React.FC = () => {
         <div className="container">
           <h2 className="contact__section-title">Nous trouver</h2>
           <div className="contact__map-container">
-            <div className="contact__map-placeholder">Carte interactive</div>
+            <iframe
+              title="Google Maps"
+              className="contact__map-iframe"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23133.96622702307!2d4.121679015625!3d43.67559!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b3e2835e2be045%3A0x408ab2ae4c21620!2s34400%20Lunel!5e0!3m2!1sfr!2sfr!4v1616000000000!5m2!1sfr!2sfr"
+              width="100%"
+              height="100%"
+              loading="lazy"
+              allowFullScreen
+            ></iframe>
           </div>
         </div>
       </section>

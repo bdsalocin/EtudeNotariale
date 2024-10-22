@@ -1,7 +1,10 @@
+@import "../base/variables";
+@import "../base/mixins";
+
 .services {
   &__hero {
     background-color: $subtle-gold;
-    padding: $spacing-xlarge 0;
+    padding: $spacing-xlarge $spacing-unit;
     text-align: center;
     margin-bottom: $spacing-xlarge;
   }
@@ -9,10 +12,19 @@
   &__title {
     font-size: $font-size-large;
     margin-bottom: $spacing-unit;
+    color: $primary-color;
 
     &::after {
-      margin: $spacing-unit auto;
+      content: "";
+      display: block;
+      height: 1px;
+      background: $accent-color;
       width: 100px;
+      margin: $spacing-unit auto;
+    }
+
+    @include mobile {
+      font-size: 2rem;
     }
   }
 
@@ -21,6 +33,11 @@
     color: $text-color;
     max-width: 600px;
     margin: 0 auto;
+
+    @include mobile {
+      font-size: 1.2rem;
+      padding: 0 $spacing-unit;
+    }
   }
 
   &__grid {
@@ -28,43 +45,78 @@
     grid-template-columns: repeat(3, 1fr);
     gap: $spacing-large;
     margin-bottom: $spacing-xlarge;
+    padding: 0 $spacing-unit;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: $spacing-large;
+    }
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   &__item {
     padding: $spacing-large;
     border: 1px solid rgba($accent-color, 0.2);
     transition: $transition-default;
+    text-align: center;
+    background-color: $secondary-color;
 
     &:hover {
       transform: translateY(-5px);
       border-color: $accent-color;
       background-color: $subtle-gold;
     }
+
+    @include mobile {
+      margin-bottom: $spacing-unit;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
   &__item-title {
     font-size: $font-size-medium;
     margin-bottom: $spacing-large;
-    text-align: center;
+    color: $primary-color;
 
     &::after {
+      content: "";
+      display: block;
+      height: 1px;
+      background: $accent-color;
+      width: 50px;
       margin: $spacing-unit auto;
+    }
+
+    @include mobile {
+      font-size: 1.5rem;
     }
   }
 
   &__list {
     list-style: none;
     padding: 0;
+    margin: 0;
 
     li {
       padding: $spacing-unit 0;
       border-bottom: 1px solid rgba($accent-color, 0.1);
       font-size: $font-size-base;
       color: $text-color;
-      text-align: center;
+      line-height: 1.6;
 
       &:last-child {
         border-bottom: none;
+        padding-bottom: 0;
+      }
+
+      &:first-child {
+        padding-top: 0;
       }
     }
   }
@@ -74,37 +126,63 @@
     color: $secondary-color;
     padding: $spacing-xlarge 0;
     text-align: center;
-  }
 
-  &__contact-title {
-    font-size: $font-size-large;
-    margin-bottom: $spacing-large;
-    color: $secondary-color;
-
-    &::after {
-      background: $accent-color;
-      margin: $spacing-unit auto;
+    .container {
+      max-width: 800px;
     }
-  }
 
-  &__contact-text {
-    font-size: $font-size-medium;
-    margin-bottom: $spacing-xlarge;
-    color: rgba($secondary-color, 0.8);
-  }
+    &-title {
+      font-size: $font-size-large;
+      margin-bottom: $spacing-large;
+      color: $secondary-color;
+      text-align: center;
 
-  &__contact-btn {
-    display: inline-block;
-    padding: $spacing-unit $spacing-large;
-    border: 2px solid $accent-color;
-    color: $accent-color;
-    text-decoration: none;
-    font-size: $font-size-base;
-    transition: $transition-default;
+      &::after {
+        content: "";
+        display: block;
+        height: 1px;
+        background: $accent-color;
+        width: 100px;
+        margin: $spacing-unit auto;
+      }
 
-    &:hover {
-      background-color: $accent-color;
-      color: $primary-color;
+      @include mobile {
+        font-size: 2rem;
+      }
+    }
+
+    &-text {
+      font-size: $font-size-medium;
+      margin-bottom: $spacing-xlarge;
+      color: rgba($secondary-color, 0.8);
+      line-height: 1.6;
+
+      @include mobile {
+        font-size: 1.2rem;
+        padding: 0 $spacing-unit;
+      }
+    }
+
+    &-btn {
+      display: inline-block;
+      padding: $spacing-unit $spacing-large;
+      border: 2px solid $accent-color;
+      color: $accent-color;
+      text-decoration: none;
+      font-size: $font-size-base;
+      transition: $transition-default;
+      letter-spacing: 1px;
+
+      &:hover {
+        background-color: $accent-color;
+        color: $primary-color;
+      }
+
+      @include mobile {
+        padding: $spacing-unit/1.2 $spacing-large;
+        width: calc(100% - #{$spacing-large * 2});
+        margin: 0 $spacing-large;
+      }
     }
   }
 }

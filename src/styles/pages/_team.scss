@@ -1,7 +1,10 @@
+@import "../base/variables";
+@import "../base/mixins";
+
 .team {
   &__hero {
     background-color: $subtle-gold;
-    padding: $spacing-xlarge 0;
+    padding: $spacing-xlarge $spacing-unit;
     text-align: center;
     margin-bottom: $spacing-xlarge;
   }
@@ -14,6 +17,10 @@
       margin: $spacing-unit auto;
       width: 100px;
     }
+
+    @include mobile {
+      font-size: 2rem;
+    }
   }
 
   &__subtitle {
@@ -21,6 +28,10 @@
     color: $text-color;
     max-width: 600px;
     margin: 0 auto;
+
+    @include mobile {
+      font-size: 1.2rem;
+    }
   }
 
   &__grid {
@@ -28,6 +39,17 @@
     grid-template-columns: repeat(3, 1fr);
     gap: $spacing-xlarge;
     margin-bottom: $spacing-xlarge;
+    padding: 0 $spacing-unit;
+
+    @include mobile {
+      grid-template-columns: 1fr;
+      gap: $spacing-large;
+    }
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+      gap: $spacing-large;
+    }
   }
 
   &__member {
@@ -35,21 +57,41 @@
     padding: $spacing-large;
     background-color: $subtle-gold;
     transition: $transition-default;
+    border-radius: 4px;
 
     &:hover {
-      transform: translateY(-5px);
+      transform: translateY(-10px);
+    }
+
+    @include mobile {
+      margin-bottom: $spacing-unit;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 
   &__member-image {
-    font-size: 3rem;
-    color: $accent-color;
+    display: inline-block;
+    width: 64px;
+    height: 64px;
     margin-bottom: $spacing-large;
+    color: $accent-color;
+    padding: $spacing-unit;
+    background: rgba($accent-color, 0.1);
+    border-radius: 50%;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
   }
 
   &__member-name {
-    font-size: $font-size-medium;
+    font-size: 1.5rem;
     margin-bottom: $spacing-unit;
+    color: $primary-color;
 
     &::after {
       margin: $spacing-unit auto;
@@ -59,54 +101,18 @@
 
   &__member-role {
     color: $accent-color;
-    font-size: $font-size-base;
+    font-size: 1.1rem;
     margin-bottom: $spacing-unit;
     font-style: italic;
   }
 
   &__member-description {
     color: $text-color;
-    font-size: $font-size-base;
     line-height: 1.6;
-  }
+    font-size: 1rem;
 
-  &__values {
-    padding: $spacing-xlarge 0;
-  }
-
-  &__values-title {
-    text-align: center;
-    font-size: $font-size-large;
-    margin-bottom: $spacing-xlarge;
-
-    &::after {
-      margin: $spacing-unit auto;
-    }
-  }
-
-  &__values-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: $spacing-large;
-    text-align: center;
-  }
-
-  &__value {
-    padding: $spacing-large;
-
-    h3 {
-      font-size: $font-size-medium;
-      margin-bottom: $spacing-unit;
-      color: $accent-color;
-
-      &::after {
-        display: none;
-      }
-    }
-
-    p {
-      color: $text-color;
-      line-height: 1.6;
+    @include mobile {
+      padding: 0 $spacing-unit;
     }
   }
 }
