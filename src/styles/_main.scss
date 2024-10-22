@@ -1,0 +1,18 @@
+// Fonts
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap");
+
+// Base
+@import "base/variables";
+@import "base/reset";
+@import "base/typography";
+@import "base/utilities";
+
+// Components
+@import "components/header";
+@import "components/footer";
+
+// Pages
+@import "pages/home";
+@import "pages/services";
+@import "pages/team";
+@import "pages/contact";

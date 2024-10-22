@@ -1,0 +1,30 @@
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-unit;
+  width: 100%;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.mb-1 {
+  margin-bottom: $spacing-unit;
+}
+.mb-2 {
+  margin-bottom: $spacing-large;
+}
+.mb-3 {
+  margin-bottom: $spacing-xlarge;
+}

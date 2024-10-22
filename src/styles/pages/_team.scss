@@ -1,0 +1,112 @@
+.team {
+  &__hero {
+    background-color: $subtle-gold;
+    padding: $spacing-xlarge 0;
+    text-align: center;
+    margin-bottom: $spacing-xlarge;
+  }
+
+  &__title {
+    font-size: $font-size-large;
+    margin-bottom: $spacing-unit;
+
+    &::after {
+      margin: $spacing-unit auto;
+      width: 100px;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-medium;
+    color: $text-color;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-xlarge;
+    margin-bottom: $spacing-xlarge;
+  }
+
+  &__member {
+    text-align: center;
+    padding: $spacing-large;
+    background-color: $subtle-gold;
+    transition: $transition-default;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__member-image {
+    font-size: 3rem;
+    color: $accent-color;
+    margin-bottom: $spacing-large;
+  }
+
+  &__member-name {
+    font-size: $font-size-medium;
+    margin-bottom: $spacing-unit;
+
+    &::after {
+      margin: $spacing-unit auto;
+      width: 30px;
+    }
+  }
+
+  &__member-role {
+    color: $accent-color;
+    font-size: $font-size-base;
+    margin-bottom: $spacing-unit;
+    font-style: italic;
+  }
+
+  &__member-description {
+    color: $text-color;
+    font-size: $font-size-base;
+    line-height: 1.6;
+  }
+
+  &__values {
+    padding: $spacing-xlarge 0;
+  }
+
+  &__values-title {
+    text-align: center;
+    font-size: $font-size-large;
+    margin-bottom: $spacing-xlarge;
+
+    &::after {
+      margin: $spacing-unit auto;
+    }
+  }
+
+  &__values-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-large;
+    text-align: center;
+  }
+
+  &__value {
+    padding: $spacing-large;
+
+    h3 {
+      font-size: $font-size-medium;
+      margin-bottom: $spacing-unit;
+      color: $accent-color;
+
+      &::after {
+        display: none;
+      }
+    }
+
+    p {
+      color: $text-color;
+      line-height: 1.6;
+    }
+  }
+}

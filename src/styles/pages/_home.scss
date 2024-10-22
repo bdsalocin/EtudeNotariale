@@ -1,0 +1,142 @@
+@import "../base/variables";
+
+.home {
+  padding-top: 80px; // Pour compenser le header fixe
+
+  &__hero {
+    height: calc(100vh - 80px);
+    background-color: $subtle-gold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  &__hero-content {
+    padding: $spacing-xlarge;
+    max-width: 800px;
+  }
+
+  &__title {
+    font-size: 4rem;
+    color: $primary-color;
+    margin-bottom: $spacing-large;
+    font-weight: 300;
+    letter-spacing: 3px;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 2px;
+      background: $accent-color;
+      width: 100px;
+      margin: $spacing-unit auto;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-medium;
+    color: $text-color;
+    margin-bottom: $spacing-xlarge;
+    font-weight: 300;
+    letter-spacing: 1.5px;
+    line-height: 1.8;
+  }
+
+  &__cta {
+    display: inline-block;
+    padding: $spacing-unit $spacing-large;
+    background-color: $primary-color;
+    color: $secondary-color;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    letter-spacing: 2px;
+    font-size: 1rem;
+    border: 1px solid $primary-color;
+
+    &:hover {
+      background-color: transparent;
+      color: $primary-color;
+    }
+  }
+
+  &__services {
+    padding: $spacing-xlarge 0;
+    background-color: $secondary-color;
+  }
+
+  &__section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: $spacing-xlarge;
+    color: $primary-color;
+    font-weight: 300;
+    letter-spacing: 2px;
+
+    &::after {
+      margin: $spacing-unit auto;
+    }
+  }
+
+  &__features {
+    max-width: $max-width;
+    margin: 0 auto;
+    padding: 0 $spacing-unit;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-large;
+  }
+
+  &__feature {
+    text-align: center;
+    padding: $spacing-xlarge $spacing-large;
+    border: 1px solid rgba($accent-color, 0.2);
+    transition: all 0.3s ease;
+
+    &:hover {
+      transform: translateY(-10px);
+      border-color: $accent-color;
+      background-color: $subtle-gold;
+    }
+  }
+
+  &__feature-icon {
+    font-size: 2rem;
+    color: $accent-color;
+    margin-bottom: $spacing-unit;
+  }
+
+  &__feature-title {
+    font-size: 1.5rem;
+    margin-bottom: $spacing-unit;
+    color: $primary-color;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &__feature-text {
+    color: $text-color;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  &__quote {
+    padding: $spacing-xlarge 0;
+    background-color: $subtle-gold;
+    text-align: center;
+  }
+
+  &__quote-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 2rem;
+    color: $primary-color;
+    font-style: italic;
+    line-height: 1.6;
+    padding: 0 $spacing-large;
+  }
+}

@@ -1,0 +1,31 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $font-primary;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  margin: 0;
+
+  &::after {
+    content: "";
+    display: block;
+    height: 1px;
+    background: $accent-color;
+    width: 50px;
+    margin-top: $spacing-unit;
+  }
+}
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  transition: all 0.3s ease;
+
+  &:hover {
+    color: $accent-color;
+  }
+}

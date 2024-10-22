@@ -1,0 +1,110 @@
+.services {
+  &__hero {
+    background-color: $subtle-gold;
+    padding: $spacing-xlarge 0;
+    text-align: center;
+    margin-bottom: $spacing-xlarge;
+  }
+
+  &__title {
+    font-size: $font-size-large;
+    margin-bottom: $spacing-unit;
+
+    &::after {
+      margin: $spacing-unit auto;
+      width: 100px;
+    }
+  }
+
+  &__subtitle {
+    font-size: $font-size-medium;
+    color: $text-color;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: $spacing-large;
+    margin-bottom: $spacing-xlarge;
+  }
+
+  &__item {
+    padding: $spacing-large;
+    border: 1px solid rgba($accent-color, 0.2);
+    transition: $transition-default;
+
+    &:hover {
+      transform: translateY(-5px);
+      border-color: $accent-color;
+      background-color: $subtle-gold;
+    }
+  }
+
+  &__item-title {
+    font-size: $font-size-medium;
+    margin-bottom: $spacing-large;
+    text-align: center;
+
+    &::after {
+      margin: $spacing-unit auto;
+    }
+  }
+
+  &__list {
+    list-style: none;
+    padding: 0;
+
+    li {
+      padding: $spacing-unit 0;
+      border-bottom: 1px solid rgba($accent-color, 0.1);
+      font-size: $font-size-base;
+      color: $text-color;
+      text-align: center;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+
+  &__contact {
+    background-color: $primary-color;
+    color: $secondary-color;
+    padding: $spacing-xlarge 0;
+    text-align: center;
+  }
+
+  &__contact-title {
+    font-size: $font-size-large;
+    margin-bottom: $spacing-large;
+    color: $secondary-color;
+
+    &::after {
+      background: $accent-color;
+      margin: $spacing-unit auto;
+    }
+  }
+
+  &__contact-text {
+    font-size: $font-size-medium;
+    margin-bottom: $spacing-xlarge;
+    color: rgba($secondary-color, 0.8);
+  }
+
+  &__contact-btn {
+    display: inline-block;
+    padding: $spacing-unit $spacing-large;
+    border: 2px solid $accent-color;
+    color: $accent-color;
+    text-decoration: none;
+    font-size: $font-size-base;
+    transition: $transition-default;
+
+    &:hover {
+      background-color: $accent-color;
+      color: $primary-color;
+    }
+  }
+}
