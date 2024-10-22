@@ -45,11 +45,47 @@
     }
   }
 
+  &__cta {
+    display: inline-block;
+    padding: $spacing-unit $spacing-large;
+    background-color: $primary-color;
+    color: $secondary-color;
+    text-decoration: none;
+    transition: $transition-default;
+    letter-spacing: 2px;
+    border: 1px solid $primary-color;
+
+    &:hover {
+      background-color: transparent;
+      color: $primary-color;
+    }
+  }
+
+  &__services {
+    padding: $spacing-xlarge 0;
+  }
+
+  &__section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: $spacing-xlarge;
+    color: $primary-color;
+    font-weight: 300;
+    letter-spacing: 2px;
+
+    &::after {
+      margin: $spacing-unit auto;
+    }
+
+    @include mobile {
+      font-size: 2rem;
+    }
+  }
+
   &__features {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: $spacing-large;
-    padding: $spacing-xlarge $spacing-unit;
 
     @include mobile {
       grid-template-columns: 1fr;
@@ -61,12 +97,67 @@
   }
 
   &__feature {
-    padding: $spacing-large;
-    background: $subtle-gold;
-    transition: transform $transition-speed ease;
+    padding: $spacing-xlarge $spacing-large;
+    border: 1px solid rgba($accent-color, 0.2);
+    transition: $transition-default;
+    text-align: center;
+
+    &:hover {
+      transform: translateY(-10px);
+      border-color: $accent-color;
+      background-color: $subtle-gold;
+    }
 
     @include mobile {
-      padding: $spacing-unit;
+      padding: $spacing-large;
+    }
+  }
+
+  &__feature-icon {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    margin-bottom: $spacing-large;
+    color: $accent-color;
+
+    svg {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__feature-title {
+    font-size: 1.5rem;
+    margin-bottom: $spacing-unit;
+    color: $primary-color;
+    font-weight: 400;
+    letter-spacing: 1.5px;
+
+    &::after {
+      display: none;
+    }
+  }
+
+  &__feature-text {
+    color: $text-color;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  &__quote {
+    padding: $spacing-xlarge 0;
+    background-color: $subtle-gold;
+    text-align: center;
+  }
+
+  &__quote-text {
+    font-size: 2rem;
+    color: $primary-color;
+    font-style: italic;
+    line-height: 1.6;
+
+    @include mobile {
+      font-size: 1.5rem;
     }
   }
 }
