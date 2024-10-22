@@ -1,22 +1,40 @@
-*,
-*::before,
-*::after {
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+  min-height: 100vh;
+}
+
+body {
+  position: relative;
+  padding-top: 80px; // Pour le header fixe
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: $font-primary;
+  line-height: 1.6;
+  color: $primary-color;
+  background-color: $secondary-color;
+
+  &.no-scroll {
+    overflow: hidden;
+  }
+}
+
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
 
-html {
-  scroll-behavior: smooth;
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
-body {
-  margin: 0;
-  padding-top: 80px; // Hauteur du header
-  font-family: $font-primary;
-  background-color: $secondary-color;
-  color: $primary-color;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  line-height: 1.6;
+main {
+  flex: 1;
 }
